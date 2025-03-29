@@ -9,6 +9,7 @@
   body{
     background-color: #2a2a2a;
     color: #eaeaea;
+    overflow-x: hidden;
   }
   
   /* Hero Banner */
@@ -17,6 +18,7 @@
     background-position: center;
     background-size:contain;
     height: 40vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,30 +56,29 @@
   .btn:hover {
     background-color: #ff4b3a;
   }
-  
-  .grid{
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-    flex-direction: column; 
-  }
 
   .header{
     margin: 1rem;
   }
 
   /* Country Cards */
+  .grid{
+    width: 100vw;
+    padding: 2rem;
+    column-count: 2;
+  }
   .country-card {
+    display: flex;
     background-color: #3a3a3a;
     padding: 2rem;
-    margin: 0.5rem 0rem;
+    margin-bottom: 1rem;
     border-radius: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 0.2rem solid #444;
-    width: 94%;
-    display: flex;
+    width: 40vw;
     justify-content: center;
     align-items: center;
+    float: left;
   }
   
   .country-card:hover {
@@ -86,19 +87,18 @@
   }
   
   .country-card .country-name{
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .country-image {
     height: 10vh;
-    object-fit: cover;
+    width: 15vh;
     border-radius: 1rem;
     margin-right: 2rem;
     float: left;
   }
   
   .country-name {
-    font-size: 1.25rem;
     font-weight: bold;
   }
   
@@ -188,5 +188,18 @@
     }
     .photos{
     margin: 1.5rem 0.6rem 4rem 0.6rem;
+    }
+    .country-card{
+    flex-direction: column;
+    padding: 1.5rem 0rem;
+    }
+
+    .country-card .country-name{
+      font-size: 1rem;
+    }
+
+    .country-image{
+      margin-right: 0rem;
+      margin-bottom: 1rem;
     }
   }
