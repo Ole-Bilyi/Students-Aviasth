@@ -15,14 +15,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <!-- Hero Banner -->
   <section class="banner">
     <div class="text-center">
       <h1>Discover Your Next Adventure</h1>
       <p>Find and book the best deals on flights to amazing destinations around the world</p>
       <div class="flex justify-center gap-2">
-        <input type="text" placeholder="Your location" class="location-input">
-        <button onclick="goToCountry('Japan')" class="btn">Find Tickets</button>
+        <input type="text" placeholder="Your location" id="locationInput" oninput="let selectedLocation = document.getElementById('locationInput').value; goToCountry(selectedLocation)" class="location-input">
       </div>
     </div>
   </section>
@@ -34,39 +34,13 @@
       <p>Click on a country to explore attractions and find tickets</p>
     </div>
 
-    <div class="grid">
-      <!-- Country Card -->
-      <div class="country-card" onclick="openModal('Japan')">
-        <img src="pictures/jp.png" alt="Japan" class="country-image">
-        <h3 class="country-name">Japan</h3>
-      </div>
-      <div class="country-card" onclick="openModal('Brazil')">
-        <img src="pictures/br.png" alt="Brazil" class="country-image">
-        <h3 class="country-name">Brazil</h3>
-      </div>
-      <div class="country-card" onclick="openModal('France')">
-        <img src="pictures/fr.png" alt="France" class="country-image">
-        <h3 class="country-name">France</h3>
-      </div>
-      <div class="country-card" onclick="openModal('Australia')">
-        <img src="pictures/au.png" alt="Australia" class="country-image">
-        <h3 class="country-name">Australia</h3>
-      </div>
-      <div class="country-card" onclick="openModal('Austria')">
-        <img src="pictures/at.png" alt="Austria" class="country-image">
-        <h3 class="country-name">Austria</h3>
-      </div>
-      <div class="country-card" onclick="openModal('Egypt')">
-        <img src="pictures/eg.png" alt="Egypt" class="country-image">
-        <h3 class="country-name">Egypt</h3>
-      </div>
-    </div>
+    <div id="grid" class="grid"></div>
   </section>
 
   <!-- Modal -->
   <div id="countryModal" class="modal-overlay" style="display: none;">
     <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">X</span>
+      <span class="close-btn" onclick="closeModal()">x</span>
       <h2 id="countryName">Japan</h2>
       <div id="countryPhotos" class="photos">
         <img src="pictures/jp1.jpg" alt="Photo 1">
