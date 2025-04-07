@@ -90,6 +90,12 @@
     font-size: 2rem;
   }
 
+  .none{
+    background-color: #2a2a2a;
+    border: #2a2a2a 1px solid;
+    height: 30vh;
+  }
+
   .country-image {
     height: 10vh;
     width: 15vh;

@@ -35,6 +35,10 @@ let block = document.getElementById('grid');
 
 window.addEventListener("load", function() {
   countries.forEach(element => {
+    // fetch("https://jsonplaceholder.typicode.com/todos/1")
+    // .then(response => response.json()) // Преобразуем в JSON
+    // .then(data => console.log(data.title)) // Выведем заголовок
+    // .catch(error => console.error("Ошибка:", error));
     block.innerHTML += '<div class="country-card" onclick="openModal(\''+element[0]+'\', \''+element[1]+'\')"><img src="pictures/'+element[1]+'.png" alt="'+element[0]+'" class="country-image"><h3 class="country-name">'+element[0]+'</h3></div>';
   });
 });
@@ -82,6 +86,9 @@ function openModal(country, initialD) {
       countries.forEach(element => {
         if (element[0].includes(selectedCountries[i])) {
           block.innerHTML += '<div class="country-card" onclick="openModal(\''+element[0]+'\', \''+element[1]+'\')"><img src="pictures/'+element[1]+'.png" alt="'+element[0]+'" class="country-image"><h3 class="country-name">'+element[0]+'</h3></div>';
-      }});
+      }
+    });
+    } if (selectedCountries.length%2==1){
+      block.innerHTML += '<div class="country-card none"></div>'; 
     }
   }
