@@ -88,7 +88,4 @@ function openModal(country, initialD) {
           block.innerHTML += '<div class="country-card" onclick="openModal(\''+element[0]+'\', \''+element[1]+'\')"><img src="pictures/'+element[1]+'.png" alt="'+element[0]+'" class="country-image"><h3 class="country-name">'+element[0]+'</h3></div>';
       }
     });
-    } if (selectedCountries.length%2==1){
-      block.innerHTML += '<div class="country-card none"></div>'; 
-    }
   }
