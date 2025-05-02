@@ -64,8 +64,9 @@
   /* Country Cards */
   .grid{
     width: 100vw;
-    padding: 2rem;
-    column-count: 3;
+    padding: 2rem; 
+    display: grid;
+    grid-template-columns: auto auto auto;    
   }
   .country-card {
     display: flex;
@@ -197,7 +198,7 @@
     }
 
     .grid{
-      column-count: 2;
+      grid-template-columns: auto auto; 
     }
 
     .country-card{
